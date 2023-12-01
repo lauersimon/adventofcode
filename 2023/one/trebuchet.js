@@ -32,9 +32,11 @@ const sum = testData.reduce((acc, val) => {
   }
 
   const digits = updatedVal.replace(/\D/g, "");
+  
   if (digits.split("").length === 1) {
     return acc + parseInt(`${digits}${digits}`);
   }
+  
   const x = `${digits.substring(0, 1)}${digits.slice(-1)}`;
 
   return !!x ? acc + parseInt(x) : acc;
