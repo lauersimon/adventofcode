@@ -54,9 +54,7 @@ const getMaxForColors = (colors) => ({
 
 const partTwo = testData.reduce((acc, val) => {
   const colors = getColors(val);
-
   const { maxRed, maxGreen, maxBlue } = getMaxForColors(colors);
-
   const poweredMax = maxRed * maxGreen * maxBlue;
 
   return acc + poweredMax;
