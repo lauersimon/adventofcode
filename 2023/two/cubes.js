@@ -43,3 +43,27 @@ const partOne = testData.reduce((acc, val, index) => {
 }, 0);
 
 console.log(partOne);
+
+const getMaxForColor = (colorSet) =>
+  colorSet.reduce(
+    (acc, color) => (parseInt(color) > acc ? parseInt(color) : acc),
+    0
+  );
+
+const getMaxForColors = (colors) => ({
+  maxRed: getMaxForColor(colors.red),
+  maxGreen: getMaxForColor(colors.green),
+  maxBlue: getMaxForColor(colors.blue),
+});
+
+const partTwo = testData.reduce((acc, val) => {
+  const colors = getColors(val);
+
+  const { maxRed, maxGreen, maxBlue } = getMaxForColors(colors);
+
+  const poweredMax = maxRed * maxGreen * maxBlue;
+
+  return acc + poweredMax;
+}, 0);
+
+console.log(partTwo);
