@@ -28,7 +28,7 @@ const getColors = (val) => {
 const isAbove = (color, cubesByColor) =>
   cubesByColor.some((cubes) => cubes > maxCubes[color]);
 
-const yeet = testData.reduce((acc, val, index) => {
+const partOne = testData.reduce((acc, val, index) => {
   const colors = getColors(val);
 
   if (
@@ -42,4 +42,4 @@ const yeet = testData.reduce((acc, val, index) => {
   return acc + index + 1;
 }, 0);
 
-console.log(yeet);
+console.log(partOne);
